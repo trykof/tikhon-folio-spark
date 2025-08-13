@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mail, Github, Linkedin, ExternalLink } from "lucide-react";
+import { Mail, Github, Send, ExternalLink } from "lucide-react";
+import privozoffLogo from "@/assets/privozoff-logo.png";
+import t25Logo from "@/assets/t25-logo.png";
 
 const Index = () => {
   return (
@@ -44,32 +46,36 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Проекты</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="p-8 bg-portfolio-card-bg border-border hover:shadow-lg transition-all duration-300 group">
-              <div className="h-48 bg-gradient-to-br from-portfolio-gradient-start/20 to-portfolio-gradient-end/20 rounded-lg mb-6 flex items-center justify-center">
-                <div className="text-portfolio-text-light text-lg font-medium">Превью проекта</div>
+              <div className="h-48 bg-white rounded-lg mb-6 flex items-center justify-center p-4">
+                <img src={t25Logo} alt="Т-25 Logo" className="max-h-full max-w-full object-contain" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-accent transition-colors">Проект 1</h3>
-              <p className="text-portfolio-text-light mb-6 leading-relaxed">
-                Современное веб-приложение с адаптивным дизайном и интуитивным интерфейсом. 
-                Реализована система аутентификации, работа с API и оптимизация производительности.
+              <h3 className="text-2xl font-bold mb-4 group-hover:text-accent transition-colors">Т-25</h3>
+              <p className="text-portfolio-text-light mb-4 leading-relaxed">
+                Переработка существующего проекта t-25.ru с полным рефакторингом backend'а, 
+                обновлением дизайна и улучшением пользовательского интерфейса.
               </p>
-              <Button variant="outline" className="group-hover:bg-accent group-hover:text-accent-foreground group-hover:border-accent transition-all">
-                Подробнее
-                <ExternalLink className="ml-2 h-4 w-4" />
+              <Button variant="outline" className="group-hover:bg-accent group-hover:text-accent-foreground group-hover:border-accent transition-all" asChild>
+                <a href="https://t-25.ru" target="_blank" rel="noopener noreferrer">
+                  Посмотреть
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
               </Button>
             </Card>
 
             <Card className="p-8 bg-portfolio-card-bg border-border hover:shadow-lg transition-all duration-300 group">
-              <div className="h-48 bg-gradient-to-br from-portfolio-gradient-end/20 to-portfolio-gradient-start/20 rounded-lg mb-6 flex items-center justify-center">
-                <div className="text-portfolio-text-light text-lg font-medium">Превью проекта</div>
+              <div className="h-48 bg-white rounded-lg mb-6 flex items-center justify-center p-4">
+                <img src={privozoffLogo} alt="ПривозоффАвто Logo" className="max-h-full max-w-full object-contain" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-accent transition-colors">Проект 2</h3>
-              <p className="text-portfolio-text-light mb-6 leading-relaxed">
-                Полнофункциональная платформа электронной коммерции с админ-панелью, 
-                системой платежей и аналитикой. Использованы современные технологии и лучшие практики разработки.
+              <h3 className="text-2xl font-bold mb-4 group-hover:text-accent transition-colors">ПривозоффАвто</h3>
+              <p className="text-portfolio-text-light mb-4 leading-relaxed">
+                Лендинг-сайт privozoff.com, разработанный с нуля с базовым функционалом 
+                системы заявок и современным адаптивным дизайном.
               </p>
-              <Button variant="outline" className="group-hover:bg-accent group-hover:text-accent-foreground group-hover:border-accent transition-all">
-                Подробнее
-                <ExternalLink className="ml-2 h-4 w-4" />
+              <Button variant="outline" className="group-hover:bg-accent group-hover:text-accent-foreground group-hover:border-accent transition-all" asChild>
+                <a href="https://privozoff.com" target="_blank" rel="noopener noreferrer">
+                  Посмотреть
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
               </Button>
             </Card>
           </div>
@@ -87,22 +93,26 @@ const Index = () => {
             <div className="flex items-center justify-center mb-8">
               <Mail className="h-5 w-5 text-accent mr-3" />
               <a 
-                href="mailto:tikhon.ryzhikov@example.com" 
+                href="mailto:m@nllp.ru" 
                 className="text-lg hover:text-accent transition-colors"
               >
-                tikhon.ryzhikov@example.com
+                m@nllp.ru
               </a>
             </div>
           </div>
           
           <div className="flex justify-center space-x-6">
-            <Button variant="outline" size="lg" className="hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all">
-              <Github className="h-5 w-5 mr-2" />
-              GitHub
+            <Button variant="outline" size="lg" className="hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all" asChild>
+              <a href="https://github.com/trykof" target="_blank" rel="noopener noreferrer">
+                <Github className="h-5 w-5 mr-2" />
+                GitHub
+              </a>
             </Button>
-            <Button variant="outline" size="lg" className="hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all">
-              <Linkedin className="h-5 w-5 mr-2" />
-              LinkedIn
+            <Button variant="outline" size="lg" className="hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all" asChild>
+              <a href="https://t.me/trykof" target="_blank" rel="noopener noreferrer">
+                <Send className="h-5 w-5 mr-2" />
+                Telegram
+              </a>
             </Button>
           </div>
         </div>
